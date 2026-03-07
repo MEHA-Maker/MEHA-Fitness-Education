@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effizienz-Coaching: Fitness, Bildung & Ernährung</title>
+    <!-- Dein Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://jsdelivr.net">
+    <style>
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; }
+        .hero-section { background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%); color: white; padding: 80px 0; }
+        .card { border: none; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; }
+        .card:hover { transform: translateY(-5px); }
+        .lerntyp-icon { font-size: 2rem; color: #6f42c1; }
+        .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 1050; }
+        .pricing-card-title { font-size: 2.5rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<!-- Sprachumschalter -->
+<div class="lang-switch shadow-sm bg-white p-2 rounded border">
+    <select id="langSelector" class="form-select form-select-sm" onchange="changeLanguage(this.value)">
+        <option value="de">Deutsch</option>
+        <option value="en">English</option>
+        <option value="cs">Čeština</option>
+        <option value="it">Italiano</option>
+    </select>
+</div>
+
+<!-- Hero Section -->
+<header class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold" id="hero-title">Fitness, Bildung & Ernährung vereint</h1>
+        <p class="lead" id="hero-sub">Wieso nicht alles gemeinsam in einem effizienten 2-Monatsplan?</p>
+        <a href="#anmeldung" class="btn btn-warning btn-lg mt-3 fw-bold" id="btn-start">Jetzt Starten</a>
+    </div>
+</header>
+
+<main class="container my-5">
+    
+    <!-- Voraussetzungen & Konzept -->
+    <section class="row mb-5 align-items-center g-4">
+        <div class="col-md-6">
+            <h2 id="need-title">Was du brauchst?</h2>
+            <ul class="list-group list-group-flush bg-transparent">
+                <li class="list-group-item bg-transparent"><i class="bi bi-wifi text-primary me-2"></i> <span id="req-1">Internet für wöchentliche Besprechungen</span></li>
+                <li class="list-group-item bg-transparent"><i class="bi bi-target text-danger me-2"></i> <span id="req-2">Den Willen, etwas zu verbessern</span></li>
+                <li class="list-group-item bg-transparent"><i class="bi bi-check2-circle text-success me-2"></i> <span id="req-3">Ein oder mehrere Ziele</span></li>
+            </ul>
+        </div>
+        <div class="col-md-6 bg-white p-4 rounded shadow-sm border">
+            <h3 id="coach-title">Dein individuelles Coaching</h3>
+            <p id="coach-text">Nach Zusendung und Besprechung der Ziele wird ein individueller Plan erstellt. Fitter werden und gleichzeitig lernen? Wir kombinieren Übungen mit deinem Lerntyp.</p>
+        </div>
+    </section>
+
+    <!-- Lerntypen -->
+    <section class="mb-5 text-center">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card p-3"><i class="bi bi-eye lerntyp-icon"></i><h5 id="t1">Visuell</h5><p class="small text-muted" id="d1">Bilder & Mind-Maps</p></div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-3"><i class="bi bi-earbuds lerntyp-icon"></i><h5 id="t2">Auditiv</h5><p class="small text-muted" id="d2"> Gespräche Podcasts & Musik</p></div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-3"><i class="bi bi-hand-index-thumb lerntyp-icon"></i><h5 id="t3">Haptisch</h5><p class="small text-muted" id="d3">Bewegung & Action</p></div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-3"><i class="bi bi-chat-dots lerntyp-icon"></i><h5 id="t4">Kommunikativ</h5><p class="small text-muted" id="d4">Diskussion & Argumentation</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preise -->
+    <section id="preise" class="mb-5">
+        <h2 class="text-center mb-4" id="price-title">Investition in dich selbst</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+            <div class="col">
+              <div class="card border-primary">
+                <div class="card-header py-3 text-white bg-primary"><h4 class="my-0" id="ps-title">Einzel-Coaching</h4></div>
+                <div class="card-body">
+                  <h1 class="pricing-card-title"><span id="val-single">120</span><span class="currency">€</span></h1>
+                  <ul class="list-unstyled mt-3 mb-4"><li id="ps-li">1-zu-1 Fokus</li></ul>
+                  <a href="#anmeldung" class="btn btn-lg btn-outline-primary w-100">Booking</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-header py-3"><h4 class="my-0" id="pg-title">Gruppen-Tarif</h4></div>
+                <div class="card-body">
+                  <h1 class="pricing-card-title"><span id="val-group">75</span><span class="currency">€</span></h1>
+                  <ul class="list-unstyled mt-3 mb-4"><li id="pg-li">Ab 3 Personen</li></ul>
+                  <a href="#anmeldung" class="btn btn-lg btn-primary w-100">Booking</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="card border-success">
+                  <div class="card-header py-3 text-white bg-success"><h4 class="my-0" id="pspec-title">City-Special</h4></div>
+                  <div class="card-body">
+                    <h1 class="pricing-card-title"><span id="val-spec">60</span><span class="currency">€</span></h1>
+                    <ul class="list-unstyled mt-3 mb-4"><li id="pspec-li">Studenten Rabatt</li></ul>
+                    <a href="#anmeldung" class="btn btn-lg btn-success w-100">Booking</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+    </section>
+
+    <!-- Kontakt / Anmeldung -->
+        <section id="anmeldung" class="p-5 bg-dark text-white rounded shadow text-center">
+        <h4 id="form-t">Bereit für deine Ziele?</h4>
+        <p id="form-d">Sende uns eine Nachricht mit deinen Zielen und wir melden uns bei dir.</p>
+        <form onsubmit="sendMail(event)" class="row g-3 mt-3 text-start justify-content-center">
+            <div class="col-md-4"><input type="text" id="name" class="form-control" placeholder="Name" required></div>
+            <div class="col-md-4"><input type="email" id="email" class="form-control" placeholder="Deine E-Mail" required></div>
+            <div class="col-md-8"><textarea id="message" class="form-control" rows="3" placeholder="Ziele & Fragen..."></textarea></div>
+            <div class="col-md-8"><button type="submit" class="btn btn-warning w-100 fw-bold btn-lg" id="btn-send">Jetzt Nachricht senden</button></div>
+        </form>
+    </section>
+</main>
+
+<footer class="text-center py-4 border-top mt-5">
+    <p class="text-muted small">&copy; 2026 CE Coaching-Kombination | Brno - Umgebung - Remote Questions: writehelloworldnew@gmail.com</p>
+</footer>
+
+<script>
+const base = { single: 120, group: 75, spec: 60 };
+const translations = {
+    de: { unit: "€", h1: "Fitness, Bildung & Ernährung vereint", sub: "Effizienter 2-Monatsplan", btn: "Jetzt Starten", need: "Was du brauchst?", r1: "Internet", r2: "Wille", r3: "Ziele", cT: "Dein Coaching", cD: "Wir kombinieren Übungen mit deinem Lerntyp.", pT: "Investition in dich selbst", psT: "Einzel-Coaching", pgT: "Gruppen-Tarif", pspecT: "City-Special", psL: "1-zu-1 Fokus", pgL: "Ab 3 Personen", pspecL: "Studenten Rabatt", ft: "Bereit für deine Ziele?", fd: "Sende uns eine Nachricht!", bs: "Senden", t1: "Visuell", t2: "Auditiv", t3: "Haptisch", t4: "Kommunikativ" },
+    en: { unit: "€", h1: "Fitness, Education & Nutrition", sub: "Efficient 2-Month Plan", btn: "Start Now", need: "Requirements", r1: "Internet", r2: "Willpower", r3: "Goals", cT: "Personal Coaching", cD: "Exercises tailored to your learning style.", pT: "Investment", psT: "1-on-1 Coaching", pgT: "Group Rate", pspecT: "City-Special", psL: "Full Focus", pgL: "3+ People", pspecL: "Student Discount", ft: "Ready for your goals?", fd: "Send us a message!", bs: "Send", t1: "Visual", t2: "Auditory", t3: "Haptic", t4: "Talk" },
+    cs: { unit: "Kč", h1: "Fitness, Vzdělávání a Výživa", sub: "Efektivní 2-měsíční plán", btn: "Začít nyní", need: "Co potřebujete?", r1: "Internet", r2: "Vůli", r3: "Cíle", cT: "Individuální koučink", cD: "Kombinujeme cvičení s vaším typem učení.", pT: "Investice do sebe", psT: "Individuální", pgT: "Skupina", pspecT: "City-Speciál", psL: "1 na 1", pgL: "Od 3 osob", pspecL: "Studentská sleva", ft: "Jste připraveni?", fd: "Pošlete nám zprávu!", bs: "Odeslat", t1: "Vizuální", t2: "Auditivní", t3: "Haptický", t4: "Komunikační" },
+    it: { unit: "€", h1: "Fitness, Studio e Nutrizione", sub: "Piano di 2 mesi", btn: "Inizia", need: "Cosa serve?", r1: "Internet", r2: "Volontà", r3: "Obiettivi", cT: "Coaching Individuale", cD: "Esercizi basati sul tuo stile di apprendimento.", pT: "Investimento", psT: "Individuale", pgT: "Gruppo", pspecT: "City-Speciale", psL: "Focus Totale", pgL: "3+ Persone", pspecL: "Sconto Studenti", ft: "Pronto per i tuoi obiettivi?", fd: "Inviaci un messaggio!", bs: "Invia", t1: "Visuale", t2: "Uditivo", t3: "Attivo", t4: "Sociale" }
+};
+
+function changeLanguage(lang) {
+    const t = translations[lang];
+    if(!t) return;
+    document.getElementById('hero-title').innerText = t.h1;
+    document.getElementById('hero-sub').innerText = t.sub;
+    document.getElementById('btn-start').innerText = t.btn;
+    document.getElementById('need-title').innerText = t.need;
+    document.getElementById('req-1').innerText = t.r1;
+    document.getElementById('req-2').innerText = t.r2;
+    document.getElementById('req-3').innerText = t.r3;
+    document.getElementById('coach-title').innerText = t.cT;
+    document.getElementById('coach-text').innerText = t.cD;
+    document.getElementById('price-title').innerText = t.pT;
+    document.getElementById('ps-title').innerText = t.psT;
+    document.getElementById('pg-title').innerText = t.pgT;
+    document.getElementById('pspec-title').innerText = t.pspecT;
+    document.getElementById('ps-li').innerText = t.psL;
+    document.getElementById('pg-li').innerText = t.pgL;
+    document.getElementById('pspec-li').innerText = t.pspecL;
+    document.getElementById('form-t').innerText = t.ft;
+    document.getElementById('form-d').innerText = t.fd;
+    document.getElementById('btn-send').innerText = t.bs;
+    document.getElementById('t1').innerText = t.t1; document.getElementById('t2').innerText = t.t2;
+    document.getElementById('t3').innerText = t.t3; document.getElementById('t4').innerText = t.t4;
+
+    const factor = (lang === 'cs') ? 25 : 1;
+    document.getElementById('val-single').innerText = (base.single * factor).toLocaleString();
+    document.getElementById('val-group').innerText = (base.group * factor).toLocaleString();
+    document.getElementById('val-spec').innerText = (base.spec * factor).toLocaleString();
+    document.querySelectorAll('.currency').forEach(el => el.innerText = t.unit);
+}
+
+function sendMail(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    const subject = encodeURIComponent("Anfrage Coaching");
+    const body = encodeURIComponent(`Name: ${name}\nE-Mail: ${email}\n\nNachricht:\n${message}`);
+    
+    // Pop-up Fenster anzeigen
+    alert("Vielen Dank für Ihre Nachricht! Wir melden uns bald bei Ihnen.");
+    
+    // E-Mail Programm öffnen
+    window.location.href = `mailto:writehelloworldnew@://gmail.com{subject}&body=${body}`;
+}
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
